@@ -10,7 +10,17 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 connectDB();
-app.use(cors());
+app.use(cors(
+  {
+      origin: ["https://deploy-mern-1whq.vercel.app"],
+      methods: ["POST", "GET", "DELETE", "PUT"],
+      credentials: true
+  } 
+  
+));
+
+mongoose.connect('mongodb+srv://noobmaster69cr7:g9iIxLzZpg4H52za@cluster0.hfc269j.mongodb.net/?retryWrites=true&w=majority');
+
 app.use(express.urlencoded({ extended: true } ));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
