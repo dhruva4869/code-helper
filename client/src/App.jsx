@@ -10,6 +10,14 @@ import EditBook from "./routes/Book/editBook";
 
 
 function App() {
+  axios.defaults.withCredentials = true;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('code-helper-2.vercel.app/register', {name, email, password})
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
+  }
+  
   return (
     <>
       <Router>
