@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 app.use(cors(
   {
-      origin: ["https://code-helper-2.vercel.app/"],
+      origin: ["https://code-helper-frontend.vercel.app/"],
       methods: ["POST", "GET", "DELETE", "PUT"],
       credentials: true
   } 
